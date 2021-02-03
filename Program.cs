@@ -6,6 +6,8 @@ namespace O.R.K.A._Project_ver._2._0
     {
         static void Main(string[] args)
         {
+            #region Variables
+
             //Konstruktory Klas//
             Menu menu = new Menu();
             Eq eq = new Eq();
@@ -21,8 +23,12 @@ namespace O.R.K.A._Project_ver._2._0
             
             //Inty
             int toiletEvent = 1;
+
+            #endregion
             
             //Wstęp do gry
+            #region Intro
+
             Methods.Clear();
             Console.WriteLine("Witaj w Project O.R.K.A.!");
             Methods.Sleep(350);
@@ -30,12 +36,17 @@ namespace O.R.K.A._Project_ver._2._0
             Methods.Sleep(100);
             Console.WriteLine("Pomiędzy lekcjami spierdoliłeś do Ropuszki po Gorącego Psa z extra SSSOOOSSS");
             Methods.Sleep(200);
-            Console.WriteLine("Reszte dowiesz(lub też nie) się podczas gry.");
+            Console.WriteLine("Reszte dowiesz się(lub nie) podczas gry.");
             Methods.Sleep(200);
             Console.WriteLine("Miłej zabawy! - Zarząd TEB Studio");
             Methods.Ent();
             Methods.Clear();
+
+            #endregion
+            
             //Menu
+            #region Menu
+
             menu:
             menu._Menu();
             string menuChoice = Console.ReadLine();
@@ -72,7 +83,11 @@ namespace O.R.K.A._Project_ver._2._0
                 goto menu;            
             }
 
+            #endregion
+            
             //Przed budynkiem
+            #region Front
+
             front:
             {
                 
@@ -141,8 +156,12 @@ namespace O.R.K.A._Project_ver._2._0
              }
              
             }
+
+            #endregion
             
             //Dyrka w Bramie
+            #region Dyrkak
+
             dyrkaGate:
             {
                 Random achivmentDyrkaWBramie = new Random();
@@ -180,8 +199,12 @@ namespace O.R.K.A._Project_ver._2._0
                     Methods.Sleep(500);
                 }
             }
+
+            #endregion
             
             //Brama
+            #region Gate
+
             gate:
             {
                 Methods.Clear();
@@ -247,8 +270,12 @@ namespace O.R.K.A._Project_ver._2._0
                     goto gate;
                 }
             }
+
+            #endregion
             
             //Korytarz parter
+            #region groundFloor
+
             groundFloor:
             {
                 Methods.Clear();
@@ -508,12 +535,19 @@ namespace O.R.K.A._Project_ver._2._0
                     goto groundFloor;
                 }
             }
+
+            #endregion
             
             //Piwnica
+            #region Basement
+
             basement:
             {
                 
             }
+
+            #endregion
+            
         }
     }
 }
