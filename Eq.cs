@@ -290,6 +290,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Console.WriteLine("2. Wróć\n");
                         
                         string itemChoice = Console.ReadLine();
+                        string uneqChoice;
 
                         
                         if (itemChoice == "2")
@@ -297,20 +298,82 @@ namespace O.R.K.A._Project_ver._2._0
                             goto eqStart;
                         }
                         
+                        //If weapon
                         else if (itemChoice == "1" && Items[eqChoiceInt].isWeapon)
                         {
+                            //If weapon already equipped
                             if (equippedWeapon != null)
                             {
-                                Items.Add(equippedWeapon);
+                                uneq:
+                                Methods.Clear();
+                                Console.WriteLine("Czy chcesz wymienić wyekwipowaną broń?");
+                                Console.WriteLine("1.Tak");
+                                Console.WriteLine("2.Nie");
+                                
+                                uneqChoice = Console.ReadLine();
+
+                                if (uneqChoice == "1")
+                                {
+                                    Items.Add(equippedWeapon);
+                                    equippedWeapon = Items[eqChoiceInt];
+                                    Console.WriteLine($"Używasz {Items[eqChoiceInt].name}");
+                                    Items.Remove(Items[eqChoiceInt]);
+                                    Methods.Ent();
+                                    goto eqStart;
+                                }
+                                if(uneqChoice == "2")
+                                {
+                                    goto eqStart;
+                                }
+                                else
+                                {
+                                    goto uneq;
+                                }
                             }
+                            
+                            //If no weapon eauipped
                             equippedWeapon = Items[eqChoiceInt];
                             Console.WriteLine($"Używasz {Items[eqChoiceInt].name}");
                             Items.Remove(Items[eqChoiceInt]);
                             Methods.Ent();
                             goto eqStart;
                         }
+                        //If shield
                         else if (itemChoice == "1" && Items[eqChoiceInt].isShield)
                         {
+                            if (equippedShield != null)
+                            {
+                                //If weapon already equipped
+                                if (equippedShield != null)
+                                {
+                                    uneq:
+                                    Methods.Clear();
+                                    Console.WriteLine("Czy chcesz wymienić wyekwipowaną broń?");
+                                    Console.WriteLine("1.Tak");
+                                    Console.WriteLine("2.Nie");
+
+                                    uneqChoice = Console.ReadLine();
+
+                                    if (uneqChoice == "1")
+                                    {
+                                        Items.Add(equippedShield);
+                                        equippedShield = Items[eqChoiceInt];
+                                        Console.WriteLine($"Używasz {Items[eqChoiceInt].name}");
+                                        Items.Remove(Items[eqChoiceInt]);
+                                        Methods.Ent();
+                                        goto eqStart;
+                                    }
+
+                                    if (uneqChoice == "2")
+                                    {
+                                        goto eqStart;
+                                    }
+                                    else
+                                    {
+                                        goto uneq;
+                                    }
+                                }
+                            }
                             equippedShield = Items[eqChoiceInt];
                             Console.WriteLine($"Używasz {Items[eqChoiceInt].name}");
                             Items.Remove(Items[eqChoiceInt]);
