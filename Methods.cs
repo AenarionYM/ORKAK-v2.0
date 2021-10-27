@@ -3,7 +3,7 @@ using System;
 
 namespace O.R.K.A._Project_ver._2._0
 {
-    public class Methods
+    public static class Methods
     {
         public static void Sleep(int time)
         {
