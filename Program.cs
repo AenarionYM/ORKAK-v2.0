@@ -12,7 +12,7 @@ namespace O.R.K.A._Project_ver._2._0
             //Konstruktory Klas//
             Menu menu = new Menu();
             Eq eq = new Eq();
-            
+
             //Unlocker'y
             bool dyrkaWBramie = true;
             bool loop = false;
@@ -21,17 +21,19 @@ namespace O.R.K.A._Project_ver._2._0
             bool wygaslRobotics = false;
             bool gruzjanEkonomiczny = true;
             bool dziurwa = false;
-            
+
             //Achivments
             bool niespostrzezony = false;
             bool segregacja = false;
-            
+
             //Inty
             int toiletEvent = 1;
+            int szukak = 1;
 
             #endregion
-            
+
             //Wstęp do gry
+
             #region Intro
 
             Methods.Clear();
@@ -48,8 +50,9 @@ namespace O.R.K.A._Project_ver._2._0
             Methods.Clear();
 
             #endregion
-            
+
             //Menu
+
             #region Menu
 
             menu:
@@ -84,12 +87,13 @@ namespace O.R.K.A._Project_ver._2._0
             {
                 Console.WriteLine("Jak ty głupi");
                 Methods.Ent();
-                goto menu;            
+                goto menu;
             }
 
             #endregion
-            
+
             //Przed budynkiem
+
             #region Front
 
             front:
@@ -100,75 +104,77 @@ namespace O.R.K.A._Project_ver._2._0
                 Console.WriteLine("Co robisz?");
                 Methods.Sleep(500);
                 Console.WriteLine("1. Wchodzisz");
-                 Methods.Sleep(500);
+                Methods.Sleep(500);
                 Console.WriteLine("2. Odchodzisz");
                 string choiseToEnter = Console.ReadLine();
 
-                 if (choiseToEnter == "1")
+                if (choiseToEnter == "1")
                 {
                     Console.WriteLine("Oł szit hir łi goł agen");
                     if (dyrkaWBramie == true)
                     {
-                         dyrkaWBramie = false;
-                         Methods.Ent();
-                         Methods.Clear();
+                        dyrkaWBramie = false;
+                        Methods.Ent();
+                        Methods.Clear();
                         Console.WriteLine("Wchodzisz do szkoły");
                         Methods.Sleep(1000);
                         goto dyrkaGate;
-                     }
-                    
+                    }
+
                     else
-                     {
+                    {
                         Methods.Ent();
                         Methods.Clear();
                         goto gate;
-                     }
+                    }
                 }
-             
-             else if (choiseToEnter == "2")
-             {
-                Console.WriteLine("Patrzysz na szkołę"); 
-                Methods.Sleep(500);
-                Console.WriteLine("*A... Pierdole*");
-                Methods.Sleep(500);
-                Console.WriteLine("Odchodzisz");
-                Methods.Sleep(500);
-                Console.Write(".");
-                Methods.Sleep(500);
-                Console.Write(".");
-                Methods.Sleep(500);
-                Console.Write(".");
-                Environment.Exit(1);
-             }
-             
-             else if (choiseToEnter == "1337")
-             {
-                 eq.Items.Add(Item.Doors);
-                 eq.Items.Add(Item.Desk);
-                 eq.Items.Add(Item.BatonOfPower);
-                 eq.Items.Add(Item.CrispsOfImmortality);
-                 eq.Items.Add(Item.Code);
-                 Methods.Clear();
-                 eq.ItemsDisplay();
-                 goto front;
-             }
 
-             else
-             {
-                 Methods.Els();
-                 goto front;
-             }
+                else if (choiseToEnter == "2")
+                {
+                    Console.WriteLine("Patrzysz na szkołę");
+                    Methods.Sleep(500);
+                    Console.WriteLine("*A... Pierdole*");
+                    Methods.Sleep(500);
+                    Console.WriteLine("Odchodzisz");
+                    Methods.Sleep(500);
+                    Console.Write(".");
+                    Methods.Sleep(500);
+                    Console.Write(".");
+                    Methods.Sleep(500);
+                    Console.Write(".");
+                    Environment.Exit(1);
+                }
+
+                else if (choiseToEnter == "1337")
+                {
+                    eq.Items.Add(Item.Doors);
+                    eq.Items.Add(Item.Desk);
+                    eq.Items.Add(Item.BatonOfPower);
+                    eq.Items.Add(Item.CrispsOfImmortality);
+                    eq.Items.Add(Item.Code);
+                    Methods.Clear();
+                    eq.ItemsDisplay();
+                    goto front;
+                }
+
+                else
+                {
+                    Methods.Els();
+                    goto front;
+                }
             }
+
             #endregion
-            
+
             //Dyrka w Bramie
+
             #region Dyrkak
 
             dyrkaGate:
             {
                 Random achivmentDyrkaWBramie = new Random();
                 int _achivmentDyrkaWBramie = achivmentDyrkaWBramie.Next(100);
-                
+
                 if (_achivmentDyrkaWBramie < 95)
                 {
                     Methods.Sleep(500);
@@ -203,8 +209,9 @@ namespace O.R.K.A._Project_ver._2._0
             }
 
             #endregion
-            
+
             //Brama
+
             #region Gate
 
             gate:
@@ -223,7 +230,7 @@ namespace O.R.K.A._Project_ver._2._0
                 Console.WriteLine("4. Ekwipunek");
 
                 string choiseGate = Console.ReadLine();
-                
+
                 if (choiseGate == "1")
                 {
                     Console.WriteLine("Postanawisz wejść po schodach na lewo");
@@ -261,7 +268,7 @@ namespace O.R.K.A._Project_ver._2._0
                     goto front;
                 }
                 else if (choiseGate == "4")
-                { 
+                {
                     eq.ItemsDisplay();
                     goto gate;
                 }
@@ -273,8 +280,9 @@ namespace O.R.K.A._Project_ver._2._0
             }
 
             #endregion
-            
+
             //Korytarz parter
+
             #region GroundFloor
 
             groundFloor:
@@ -308,7 +316,7 @@ namespace O.R.K.A._Project_ver._2._0
                 Console.WriteLine("13. Ekwipunek");
 
                 string choiceGround = Console.ReadLine();
-                
+
                 //Sala 1
                 if (choiceGround == "1")
                 {
@@ -328,7 +336,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Rep();
                         goto groundFloor;
                     }
-                    
+
                     else if (eq.Items.Contains(Item.Jacket))
                     {
                         Methods.Clear();
@@ -342,26 +350,26 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Ent();
                         goto groundFloor;
                     }
-                }                
+                }
                 //Siadacze
                 else if (choiceGround == "2")
                 {
-                        if (!loop)
-                        {
-                            Console.WriteLine("Wszystkie  siadacze są zajęte");
-                            Methods.Ent();
-                            goto groundFloor;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Siadasz na siadaczu i się regenerujesz");
-                            Methods.Sleep(500);
-                            Console.WriteLine("*Odnawiasz 25hp*");
-                            //display_HP += 25;
-                            Methods.Ent();
-                            goto groundFloor;
-                        }
-                }          
+                    if (!loop)
+                    {
+                        Console.WriteLine("Wszystkie  siadacze są zajęte");
+                        Methods.Ent();
+                        goto groundFloor;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Siadasz na siadaczu i się regenerujesz");
+                        Methods.Sleep(500);
+                        Console.WriteLine("*Odnawiasz 25hp*");
+                        //display_HP += 25;
+                        Methods.Ent();
+                        goto groundFloor;
+                    }
+                }
                 //Pokój nauczycielski
                 else if (choiceGround == "3")
                 {
@@ -372,7 +380,7 @@ namespace O.R.K.A._Project_ver._2._0
                     Methods.Sleep(500);
                     Methods.Ent();
                     goto groundFloor;
-                }                
+                }
                 //Kible
                 else if (choiceGround == "4")
                 {
@@ -398,15 +406,17 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Clear();
                         goto groundFloor;
                     }
-                    
+
                     else if (toiletEvent == 2 && zbyszekRatuje == false)
                     {
                         Methods.Clear();
                         Console.WriteLine("Wchodzisz do toalet i widzisz Horacego i Bonifacego wciągających Tobake");
                         Methods.Sleep(500);
-                        Console.WriteLine("Witasz się z nimi, gdy do toalet wparowuje pan doktor reformowany Bielmar i rzecze:");
+                        Console.WriteLine(
+                            "Witasz się z nimi, gdy do toalet wparowuje pan doktor reformowany Bielmar i rzecze:");
                         Methods.Sleep(500);
-                        Console.WriteLine("RAZ...DWA...TRZY... kto wciąga tabake ma się przyznać bo inaczej wszyscy dostają po naganie");
+                        Console.WriteLine(
+                            "RAZ...DWA...TRZY... kto wciąga tabake ma się przyznać bo inaczej wszyscy dostają po naganie");
                         Methods.Sleep(500);
                         Console.WriteLine("Twoi znajomi wspólnie oskarżyli o to ciebie");
                         Methods.Sleep(500);
@@ -414,23 +424,26 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Ent();
                         toiletEvent++;
                         Methods.Clear();
-                        goto groundFloor; 
+                        goto groundFloor;
                         ////////////toiletEvent dalszy nie jest jeszcze zrobiony z powodu niechęci do zrobienia jego////////////////
                     }
-                    
+
                     else if (toiletEvent == 2 && zbyszekRatuje == true)
                     {
                         Console.WriteLine("Wchodzisz do toalet i widzisz Horacego i Bonifacego wciągających Tobake");
                         Methods.Sleep(500);
-                        Console.WriteLine("Witasz się z nimi, gdy do toalet wparowuje pan doktor reformowany Bielmar i rzecze:");
+                        Console.WriteLine(
+                            "Witasz się z nimi, gdy do toalet wparowuje pan doktor reformowany Bielmar i rzecze:");
                         Methods.Sleep(500);
-                        Console.WriteLine("RAZ...DWA...TRZY... kto wciąga tabake ma się przyznać bo inaczej wszyscy dostają po naganie");
+                        Console.WriteLine(
+                            "RAZ...DWA...TRZY... kto wciąga tabake ma się przyznać bo inaczej wszyscy dostają po naganie");
                         Methods.Sleep(500);
                         Console.WriteLine("Twoi znajomi wspólnie oskarżyli o to ciebie");
                         Methods.Sleep(500);
                         Console.WriteLine("W tym momencie słysząc co się dzieje, wchodzi ZBYSZEK himself");
                         Methods.Sleep(500);
-                        Console.WriteLine("Zbyszek strzela Bielmarowi w PYSK wyciaga go za fraki i kulturalnie wrzuca do kontenera z odpadami naturalnymi #segragacja ");
+                        Console.WriteLine(
+                            "Zbyszek strzela Bielmarowi w PYSK wyciaga go za fraki i kulturalnie wrzuca do kontenera z odpadami naturalnymi #segragacja ");
                         Methods.Sleep(500);
                         Console.WriteLine("Horacy i Bonifacy dostają w PYSK od Zbyszka");
                         Methods.Sleep(500);
@@ -443,7 +456,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Clear();
                         goto groundFloor;
                     }
-                    
+
                     else if (toiletEvent == 3)
                     {
                         Methods.Clear();
@@ -451,11 +464,13 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Sleep(500);
                         Console.WriteLine("Szczając widzisz TAJEMNICZE GÓWNO na podłodze");
                         Methods.Sleep(500);
-                        Console.WriteLine("Podchodzisz by zbadać sprawę, gdy do kibli wchodzi nagle po swej mistyczniej 'nieobecności'");
+                        Console.WriteLine(
+                            "Podchodzisz by zbadać sprawę, gdy do kibli wchodzi nagle po swej mistyczniej 'nieobecności'");
                         Methods.Sleep(1000);
                         Console.WriteLine("Świerszcz w Czynie");
                         Methods.Sleep(500);
-                        Console.WriteLine("Wita się z tobą z daleka, próbując podać ci ręke poślizguje się na tym ów tajemniczym gównie");
+                        Console.WriteLine(
+                            "Wita się z tobą z daleka, próbując podać ci ręke poślizguje się na tym ów tajemniczym gównie");
                         Methods.Sleep(500);
                         Console.WriteLine("Rozbija se swój głupi ryj poczym odchodzi w strone drzwi");
                         Methods.Sleep(500);
@@ -465,7 +480,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Clear();
                         goto groundFloor;
                     }
-                    
+
                     else if (toiletEvent > 3)
 
                     {
@@ -478,7 +493,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Methods.Clear();
                         goto groundFloor;
                     }
-                }                
+                }
                 //Sala Fryzjerska
                 else if (choiceGround == "5")
                 {
@@ -495,151 +510,151 @@ namespace O.R.K.A._Project_ver._2._0
                     Ent();
                     Clear();
                     goto groundFloor;
-                }                
+                }
                 //Sekretariat
                 else if (choiceGround == "6")
                 {
-                     sekretariacik:
+                    sekretariacik:
 
+                    Clear();
+                    Console.WriteLine("Wchodzisz do sekretariatu, gdzie znajdują się miłe panie sekretarki");
+                    Sleep(500);
+                    Console.WriteLine("Co robisz?");
+                    Sleep(500);
+                    Console.WriteLine("");
+                    Console.WriteLine("1. Kod do drzwi");
+                    Sleep(500);
+                    Console.WriteLine("2. Zapisz grę");
+                    Sleep(500);
+                    Console.WriteLine("3. Wczytaj grę");
+                    Sleep(500);
+                    Console.WriteLine("4. Wyjście");
+                    if (eq.Items.Contains(Item.ThermosWater))
+                    {
+                        Console.WriteLine("5. Herbatka");
+                        Sleep(500);
+                    }
+
+                    if (!krukRobotics && !wygaslRobotics)
+                    {
+                        Sleep(500);
+                        Console.WriteLine("6. Zapisz się na robotykę");
+                    }
+
+                    String sekretarka = Console.ReadLine();
+
+                    if (sekretarka == "5")
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Pani z sekretariatu oferuje ci herbatke");
+                        Sleep(500);
+                        if (eq.Items.Contains(Item.ThermosWater))
+                        {
+                            Console.WriteLine("Proszę to twoja herbatka");
+                            Sleep(500);
+                            Console.WriteLine("*Zdobywasz przedmiot: herbatka*");
+                            Sleep(500);
+                            eq.Items.Add(Item.ThermosWater);
+                            eq.Items.Add(Item.ThermosTea);
+                            Ent();
                             Clear();
-                            Console.WriteLine("Wchodzisz do sekretariatu, gdzie znajdują się miłe panie sekretarki");
-                            Sleep(500);
-                            Console.WriteLine("Co robisz?");
-                            Sleep(500);
+                            goto sekretariacik;
+                        }
+                    }
+
+                    else if (sekretarka == "1")
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Uprzjmie prosisz panią sekretarkę o kod do szatni");
+                        Sleep(500);
+                        Console.WriteLine("Od pani sekretarki dowiadujesz się że, kod to 2354#");
+                        eq.Items.Add(Item.Code);
+                        Sleep(500);
+                        Console.WriteLine("Zdobywasz przedmiot: Kod do drzwi");
+                        Ent();
+                        Clear();
+                        goto sekretariacik;
+                    }
+
+                    else if (sekretarka == "2")
+                    {
+                        Clear();
+                        //save();
+                        Sleep(500);
+                        Clear();
+                        goto sekretariacik;
+                    }
+
+                    else if (sekretarka == "3")
+                    {
+                        Clear();
+                        //load();
+                        Sleep(500);
+                        Clear();
+                        goto sekretariacik;
+                    }
+
+                    else if (sekretarka == "4")
+                    {
+                        Console.WriteLine("orkizmajorki");
+                        Ent();
+                        Clear();
+                        goto groundFloor;
+                    }
+
+                    else if (sekretarka == "5" && !krukRobotics && !wygaslRobotics)
+                    {
+                        Jobot:
+                        Clear();
+                        Console.WriteLine("Choose your side");
+                        Sleep(250);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("1. Pan Kruk                   ");
+                        Sleep(250);
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write("||");
+                        Sleep(250);
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("                      2. Pan Wygasł");
+                        Console.ResetColor();
+
+                        string czussajd = Console.ReadLine();
+
+                        if (czussajd == "1")
+                        {
                             Console.WriteLine("");
-                            Console.WriteLine("1. Kod do drzwi");
+                            Console.WriteLine("Wybrałeś Pana Kruka");
+                            krukRobotics = true;
                             Sleep(500);
-                            Console.WriteLine("2. Zapisz grę");
+                            Console.WriteLine("Po dalsze instrukcje zgłoś się do sali 21");
+                            Ent();
+                            goto sekretariacik;
+                        }
+
+                        else if (czussajd == "2")
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Słusznie wybrałeś Pana Wygasła");
+                            wygaslRobotics = true;
                             Sleep(500);
-                            Console.WriteLine("3. Wczytaj grę");
-                            Sleep(500);
-                            Console.WriteLine("4. Wyjście");
-                            if (eq.Items.Contains(Item.ThermosWater))
-                            {
-                                Console.WriteLine("5. Herbatka");
-                                Sleep(500);
-                            }
-                            if (!krukRobotics && !wygaslRobotics)
-                            {
-                                Sleep(500);
-                                Console.WriteLine("6. Zapisz się na robotykę");
-                            }
+                            Console.WriteLine("Legenda głosi że można go spotkać w sali 13");
+                            Ent();
+                            goto sekretariacik;
+                        }
 
-                            String sekretarka = Console.ReadLine();
+                        else
+                        {
+                            Clear();
+                            goto Jobot;
+                        }
+                    }
 
-                            if (sekretarka == "5")
-                            {
-                                Console.WriteLine("");
-                                Console.WriteLine("Pani z sekretariatu oferuje ci herbatke");
-                                Sleep(500);
-                                if (eq.Items.Contains(Item.ThermosWater))
-                                {
-                                    Console.WriteLine("Proszę to twoja herbatka");
-                                    Sleep(500);
-                                    Console.WriteLine("*Zdobywasz przedmiot: herbatka*");
-                                    Sleep(500);
-                                    eq.Items.Add(Item.ThermosWater);
-                                    eq.Items.Add(Item.ThermosTea); 
-                                    Ent();
-                                    Clear();
-                                    goto sekretariacik;
-                                }
-                            }
-
-                            else if (sekretarka == "1")
-                            {
-                                Console.WriteLine("");
-                                Console.WriteLine("Uprzjmie prosisz panią sekretarkę o kod do szatni");
-                                Sleep(500);
-                                Console.WriteLine("Od pani sekretarki dowiadujesz się że, kod to 2354#");
-                                eq.Items.Add(Item.Code);
-                                Sleep(500);
-                                Console.WriteLine("Zdobywasz przedmiot: Kod do drzwi");
-                                Ent();
-                                Clear();
-                                goto sekretariacik;
-                            }
-
-                            else if (sekretarka == "2")
-                            {
-                                Clear();
-                                //save();
-                                Sleep(500);
-                                Clear();
-                                goto sekretariacik;
-                            }
-
-                            else if (sekretarka == "3")
-                            {
-                                Clear();
-                                //load();
-                                Sleep(500);
-                                Clear();
-                                goto sekretariacik;
-                            }
-
-                            else if (sekretarka == "4")
-                            {
-                                Console.WriteLine("orkizmajorki");
-                                Ent();
-                                Clear();
-                                goto groundFloor;
-                            }
-
-                            else if (sekretarka == "5" && !krukRobotics && !wygaslRobotics)
-                            {
-                            Jobot:
-                                Clear();
-                                Console.WriteLine("Choose your side");
-                                Sleep(250);
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.Write("1. Pan Kruk                   ");
-                                Sleep(250);
-                                Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("||");
-                                Sleep(250);
-                                Console.ForegroundColor = ConsoleColor.Cyan;
-                                Console.WriteLine("                      2. Pan Wygasł");
-                                Console.ResetColor();
-
-                                string czussajd = Console.ReadLine();
-
-                                if (czussajd == "1")
-                                {
-                                    Console.WriteLine("");
-                                    Console.WriteLine("Wybrałeś Pana Kruka");
-                                    krukRobotics = true;
-                                    Sleep(500);
-                                    Console.WriteLine("Po dalsze instrukcje zgłoś się do sali 21");
-                                    Ent();
-                                    goto sekretariacik;
-                                }
-
-                                else if (czussajd == "2")
-                                {
-                                    Console.WriteLine("");
-                                    Console.WriteLine("Słusznie wybrałeś Pana Wygasła");
-                                    wygaslRobotics = true;
-                                    Sleep(500);
-                                    Console.WriteLine("Legenda głosi że można go spotkać w sali 13");
-                                    Ent();
-                                    goto sekretariacik;
-                                }
-
-                                else
-                                {
-                                    Clear();
-                                    goto Jobot;
-                                }
-                            }
-
-                            else
-                            {
-                                Clear();
-                                goto sekretariacik;
-                            }
-
-                }                
+                    else
+                    {
+                        Clear();
+                        goto sekretariacik;
+                    }
+                }
                 //Sala Dentystyczna
                 else if (choiceGround == "7")
                 {
@@ -665,13 +680,14 @@ namespace O.R.K.A._Project_ver._2._0
                         gruzjanEkonomiczny = false;
                         goto groundFloor;
                     }
+
                     if (!gruzjanEkonomiczny)
                     {
                         Console.WriteLine("Nie ide tam, nadal boli mnie ryj");
                         Sleep(1000);
                         goto groundFloor;
                     }
-                }   
+                }
                 //Automat z Kawą
                 else if (choiceGround == "8")
                 {
@@ -686,7 +702,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Clear();
                         goto groundFloor;
                     }
-                }                
+                }
                 //Dispenser z wodą
                 else if (choiceGround == "9")
                 {
@@ -716,7 +732,7 @@ namespace O.R.K.A._Project_ver._2._0
                         Clear();
                         goto groundFloor;
                     }
-                }                
+                }
                 //Zinwestyguj gaśnice
                 else if (choiceGround == "10")
                 {
@@ -729,14 +745,14 @@ namespace O.R.K.A._Project_ver._2._0
                     Console.WriteLine("*Zdobywasz gaśnice*");
                     Methods.Ent();
                     goto groundFloor;
-                }                
+                }
                 //Zawróć
                 else if (choiceGround == "11")
                 {
                     Sleep(500);
                     Clear();
                     goto gate;
-                }                
+                }
                 //Schody na górę
                 else if (choiceGround == "12")
                 {
@@ -746,7 +762,7 @@ namespace O.R.K.A._Project_ver._2._0
                     Ent();
                     Clear();
                     goto halfFloor;
-                }                
+                }
                 //Ekwipunek
                 else if (choiceGround == "13")
                 {
@@ -763,8 +779,9 @@ namespace O.R.K.A._Project_ver._2._0
             }
 
             #endregion
-            
+
             //Piwnica
+
             #region Basement
 
             basement:
@@ -787,128 +804,119 @@ namespace O.R.K.A._Project_ver._2._0
                 {
                     Console.WriteLine("6. Ziwestyguj dziure");
                 }
-                
+
                 String corobic = Console.ReadLine();
                 {
-                        if (corobic == "1")
+                    if (corobic == "1")
+                    {
+                        if (szukak == 1)
                         {
-                            if (szukak == 1)
-                            {
-                                cls();
-                                Console.WriteLine("Na wieszaku wisi wiele kurtek");
-                                sleep();
-                                Console.WriteLine("Jedną z nich rozpoznajesz kurtkę twojego 240cm kolegi");
-                                sleep();
-                                Console.WriteLine("Po założeniu jej kurtka przykrywa ciebie całego");
-                                sleep();
-                                Console.WriteLine("*Zyskujesz przdmiot: Kurtka*");
-                                kurtka = true;
-                                ++szukak;
-                                ent();
-                                cls();
-                                goto Szatnia;
-
-
-                            }
-
-                            else if (szukak == 2)
-                            {
-                                cls();
-                                Console.WriteLine("Znalazłeś dziure w ścianie");
-                                sleep();
-                                Console.WriteLine("Ciekawo co kryje w ścrodku");
-                                dziura = true;
-                                ++szukak;
-                                ent();
-                                cls();
-                                goto Szatnia;
-
-
-                            }
-
-                            else if (szukak == 3)
-                            {
-                                cls();
-                                Console.WriteLine("*potykasz się*");
-                                sleep();
-                                Console.WriteLine("Spoglądasz w dół i widzisz naderwaną kafelkę");
-                                sleep();
-                                Console.WriteLine("Przyglądając się dostrzegasz światełko");
-                                ent();
-                                cls();
-                                goto dziura1;
-
-                            }
+                            Clear();
+                            Console.WriteLine("Na wieszaku wisi wiele kurtek");
+                            Sleep(500);
+                            Console.WriteLine("Jedną z nich rozpoznajesz kurtkę twojego 240cm kolegi");
+                            Sleep(500);
+                            Console.WriteLine("Po założeniu jej kurtka przykrywa ciebie całego");
+                            Sleep(500);
+                            Console.WriteLine("*Zyskujesz przdmiot: Kurtka*");
+                            eq.Items.Add(Item.Jacket);
+                            szukak++;
+                            Ent();
+                            Clear();
+                            goto basement;
                         }
 
-                        else if (corobic == "2")
+                        else if (szukak == 2)
                         {
-                            cls();
-                            Console.WriteLine("*widzisz uchylone drzwi*");
-                            ent();
-                            goto kotlownia1;
-
+                            Clear();
+                            Console.WriteLine("Znalazłeś dziure w ścianie");
+                            Sleep(500);
+                            Console.WriteLine("Ciekawo co kryje w ścrodku");
+                            dziurwa = true;
+                            ++szukak;
+                            Ent();
+                            Clear();
+                            goto basement;
                         }
 
-                        else if (corobic == "3")
+                        else if (szukak == 3)
                         {
-                            Console.WriteLine(" ");
-                            Console.WriteLine("A spierdalam");
-                            ent();
-                            cls();
-                            goto brama;
-
+                            Clear();
+                            Console.WriteLine("*potykasz się*");
+                            Sleep(500);
+                            Console.WriteLine("Spoglądasz w dół i widzisz naderwaną kafelkę");
+                            Sleep(500);
+                            Console.WriteLine("Przyglądając się dostrzegasz światełko");
+                            Ent();
+                            Clear();
+                            goto dziura1;
                         }
+                    }
 
-                        else if (corobic == "4")
-                        {
-                            cls();
-                            eq();
-                            cls();
-                            goto Szatnia;
+                    else if (corobic == "2")
+                    {
+                        Clear();
+                        Console.WriteLine("*widzisz uchylone drzwi*");
+                        Ent();
+                        goto kotlownia1;
+                    }
 
-                        }
+                    else if (corobic == "3")
+                    {
+                        Clear();
+                        Console.WriteLine("A spierdalam");
+                        Ent();
+                        Clear();
+                        goto gate;
+                    }
 
-                        else if (corobic == "5")
-                        {
-                            cls();
-                            Console.WriteLine("Zauważasz gaśnice");
-                            sleep();
-                            Console.WriteLine("Uważając że, jest przydatna zabierasz ją");
-                            sleep();
-                            Console.WriteLine("*Zdobywasz gaśnice*");
-                            ent();
-                            gasnica = true;
-                            cls();
-                            goto Szatnia;
-                        }
+                    else if (corobic == "4")
+                    {
+                        Clear();
+                        eq.ItemsDisplay();
+                        Clear();
+                        goto basement;
+                    }
 
-                        else if (corobic == "6" && dziura == true)
-                        {
-                            Console.WriteLine("Oooo Mlekooo");
-                            sleep();
-                            Console.WriteLine("*Zdobywasz przdmiot: Mlekooo*");
-                            mlekooo = true;
-                            ent();
-                            cls();
-                            goto Szatnia;
+                    else if (corobic == "5")
+                    {
+                        Clear();
+                        Console.WriteLine("Zauważasz gaśnice");
+                        Sleep(500);
+                        Console.WriteLine("Uważając że, jest przydatna zabierasz ją");
+                        Sleep(500);
+                        Console.WriteLine("*Zdobywasz gaśnice*");
+                        Ent();
+                        eq.Items.Add(Item.Extingusher);
+                        Clear();
+                        goto basement;
+                    }
 
+                    else if (corobic == "6" && dziurwa == true)
+                    {
+                        Console.WriteLine("Oooo Mlekooo");
+                        Sleep(500);
+                        Console.WriteLine("*Zdobywasz przdmiot: Mlekooo*");
+                        eq.Items.Add(Item.Milk);
+                        Ent();
+                        Clear();
+                        goto basement;
+                    }
 
-                        }
-
-                        else
-                        {
-                            cls();
-                            goto Szatnia;
-                        }
+                    else
+                    {
+                        Clear();
+                        goto basement;
+                    }
                 }
             }
 
             #endregion
-            
+
             //HalfFloor
+
             #region HalfFloor
-            
+
             halfFloor:
             {
                 Console.WriteLine("Na pół piętrze stoi automat z przekąskami");
@@ -919,133 +927,132 @@ namespace O.R.K.A._Project_ver._2._0
                 Console.WriteLine("4. Zejdź na parter");
 
                 String polowa = Console.ReadLine();
-                
+
                 if (polowa == "1")
                 {
-                        automotivv:
-                            Console.WriteLine("Co chcesz wybrać z automatu");
-                            Console.WriteLine("");
-                            Console.WriteLine("1. Baton of Power");
-                            Console.WriteLine("2. Napój of Youth");
-                            Console.WriteLine("3. Chipsy of Immortality");
-                            Console.WriteLine("4. Cofnij się");
+                    automotivv:
+                    Console.WriteLine("Co chcesz wybrać z automatu");
+                    Console.WriteLine("");
+                    Console.WriteLine("1. Baton of Power");
+                    Console.WriteLine("2. Napój of Youth");
+                    Console.WriteLine("3. Chipsy of Immortality");
+                    Console.WriteLine("4. Cofnij się");
 
-                            String automotiv = Console.ReadLine();
-                            
-                                if (automotiv == "1")
-                                {
-                                    var rand = new Random();
-                                    int randomnuberr = rand.Next(100);
-                                    
-                                    if (randomnuberr > 65)
-                                    {
-                                        Console.WriteLine("Zapłaciłeś a przedmiot wypada");
-                                        Sleep(500);
-                                        Console.WriteLine("*Zyskujesz Baton of Power*");
-                                        eq.Items.Add(Item.BatonOfPower);
-                                        Ent();
-                                        Clear();
-                                        goto automotivv;
+                    String automotiv = Console.ReadLine();
 
-                                    }
-                                    
-                                    else if (randomnuberr <= 65)
-                                    {
-                                        Console.WriteLine("Zapłaciłeś a przedmiot się klinuje");
-                                        Sleep(500);
-                                        Console.WriteLine("xD... Wal się frajerze");
-                                        Ent();
-                                        Clear();
-                                        goto halfFloor;
-                                    }
-                                }
-                                
-                                else if (automotiv == "2")
-                                {
-                                    var rand = new Random();
-                                    int randomnuberr = rand.Next(100);
+                    if (automotiv == "1")
+                    {
+                        var rand = new Random();
+                        int randomnuberr = rand.Next(100);
 
-                                    if (randomnuberr > 65)
-                                    {
-                                        Console.WriteLine("Zapłaciłeś a przedmiot wypada");
-                                        Sleep(500);
-                                        Console.WriteLine("*Zyskujesz Napój of Youth*");
-                                        eq.Items.Add(Item.DrinkOfYouth);
-                                        Ent();
-                                        Clear();
-                                        goto automotivv;
-                                    }
-
-                                    else if (randomnuberr <= 65)
-                                    {
-                                        Console.WriteLine("Zapłaciłeś a przedmiot się klinuje");
-                                        Sleep(500);
-                                        Console.WriteLine("xD... Wal się frajerze");
-                                        Ent();
-                                        Clear();
-                                        goto halfFloor;
-                                    }
-                                }
-                                
-                                else if (automotiv == "3")
-                                {
-                                    var rand = new Random();
-                                    int randomnuberr = rand.Next(100);
-
-                                    if (randomnuberr > 65)
-                                    {
-                                        Console.WriteLine("Zapłaciłeś a przedmiot wypada");
-                                        Sleep(500);
-                                        Console.WriteLine("*Chipsy of Immortality*");
-                                        eq.Items.Add(Item.CrispsOfImmortality);
-                                        Ent();
-                                        Clear();
-                                        goto automotivv;
-                                    }
-
-                                    else if (randomnuberr <= 65)
-                                    {
-                                        Console.WriteLine("Zapłaciłeś a przedmiot się klinuje");
-                                        Sleep(500);
-                                        Console.WriteLine("xD... Wal się frajerze");
-                                        Ent();
-                                        Clear();
-                                        goto halfFloor;
-
-                                    }
-                                }
-                                
-                                else if (automotiv == "4")
-                                {
-                                    Clear();
-                                    goto automotivv;
-                                }
-                }
-
-                else if (polowa == "2")
+                        if (randomnuberr > 65)
                         {
-                            Console.WriteLine("Wchodzisz na piętro");
+                            Console.WriteLine("Zapłaciłeś a przedmiot wypada");
+                            Sleep(500);
+                            Console.WriteLine("*Zyskujesz Baton of Power*");
+                            eq.Items.Add(Item.BatonOfPower);
                             Ent();
                             Clear();
-                            goto secondFloor;
+                            goto automotivv;
                         }
 
-                else if (polowa == "3")
+                        else if (randomnuberr <= 65)
                         {
-                            Clear();
-                            Console.WriteLine("Zauważasz gaśnice");
+                            Console.WriteLine("Zapłaciłeś a przedmiot się klinuje");
                             Sleep(500);
-                            Console.WriteLine("Uważając że, jest przydatna zabierasz ją");
-                            Sleep(500);
-                            Console.WriteLine("*Zdobywasz gaśnice*");
+                            Console.WriteLine("xD... Wal się frajerze");
                             Ent();
-                            if (!eq.Items.Contains(Item.Extingusher))
-                            {
-                                eq.Items.Add(Item.Extingusher);
-                            }
                             Clear();
                             goto halfFloor;
                         }
+                    }
+
+                    else if (automotiv == "2")
+                    {
+                        var rand = new Random();
+                        int randomnuberr = rand.Next(100);
+
+                        if (randomnuberr > 65)
+                        {
+                            Console.WriteLine("Zapłaciłeś a przedmiot wypada");
+                            Sleep(500);
+                            Console.WriteLine("*Zyskujesz Napój of Youth*");
+                            eq.Items.Add(Item.DrinkOfYouth);
+                            Ent();
+                            Clear();
+                            goto automotivv;
+                        }
+
+                        else if (randomnuberr <= 65)
+                        {
+                            Console.WriteLine("Zapłaciłeś a przedmiot się klinuje");
+                            Sleep(500);
+                            Console.WriteLine("xD... Wal się frajerze");
+                            Ent();
+                            Clear();
+                            goto halfFloor;
+                        }
+                    }
+
+                    else if (automotiv == "3")
+                    {
+                        var rand = new Random();
+                        int randomnuberr = rand.Next(100);
+
+                        if (randomnuberr > 65)
+                        {
+                            Console.WriteLine("Zapłaciłeś a przedmiot wypada");
+                            Sleep(500);
+                            Console.WriteLine("*Chipsy of Immortality*");
+                            eq.Items.Add(Item.CrispsOfImmortality);
+                            Ent();
+                            Clear();
+                            goto automotivv;
+                        }
+
+                        else if (randomnuberr <= 65)
+                        {
+                            Console.WriteLine("Zapłaciłeś a przedmiot się klinuje");
+                            Sleep(500);
+                            Console.WriteLine("xD... Wal się frajerze");
+                            Ent();
+                            Clear();
+                            goto halfFloor;
+                        }
+                    }
+
+                    else if (automotiv == "4")
+                    {
+                        Clear();
+                        goto automotivv;
+                    }
+                }
+
+                else if (polowa == "2")
+                {
+                    Console.WriteLine("Wchodzisz na piętro");
+                    Ent();
+                    Clear();
+                    goto secondFloor;
+                }
+
+                else if (polowa == "3")
+                {
+                    Clear();
+                    Console.WriteLine("Zauważasz gaśnice");
+                    Sleep(500);
+                    Console.WriteLine("Uważając że, jest przydatna zabierasz ją");
+                    Sleep(500);
+                    Console.WriteLine("*Zdobywasz gaśnice*");
+                    Ent();
+                    if (!eq.Items.Contains(Item.Extingusher))
+                    {
+                        eq.Items.Add(Item.Extingusher);
+                    }
+
+                    Clear();
+                    goto halfFloor;
+                }
 
                 else if (polowa == "4")
                 {
@@ -1055,21 +1062,22 @@ namespace O.R.K.A._Project_ver._2._0
                 }
 
                 else
-                        {
-                            goto halfFloor;
-                        }
+                {
+                    goto halfFloor;
+                }
             }
+
             #endregion
-            
+
             //SecondFloor
+
             #region SecondFloor
 
             secondFloor:
             {
-                
             }
-            #endregion
 
+            #endregion
         }
     }
 }
